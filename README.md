@@ -57,7 +57,7 @@ If not, first navigate to OMNET++ folder and open the 'configure.user' file. Fin
 
 Run ./configure again and re-check.
 
-**Step 7:** Now you can compile OMNET++ by using make. Compiling takes some time, so relax, grab a cup of coffee <img src="https://github.com/ManiAm/VENTOS/blob/master/coffee.png" width="25" height="25" /> and watch [this](https://www.youtube.com/watch?v=A6XUVjK9W4o).
+**Step 7:** Now you can compile OMNET++ by using make. Compiling takes some time, so relax, grab a cup of coffee <img src="https://github.com/ManiAm/VENTOS_Public/blob/master/coffee.png" width="25" height="25" /> and watch [this](https://www.youtube.com/watch?v=A6XUVjK9W4o).
 
     make
 
@@ -161,7 +161,7 @@ SUMO in command-line mode:
 
 The terminal should look like the following picture. The script will print `Listening on port 9999` and wait for the simulation to start. Note that after running either of these commands, DO NOT close the terminal window. Leave it open.
 
-<img src="https://github.com/ManiAm/VENTOS/blob/master/launchd.png" />
+<img src="https://github.com/ManiAm/VENTOS_Public/blob/master/launchd.png" />
 
 **Step 2:** To make the life easier, you can create an alias command to make a shortcut to the above long commands. Open .bashrc and add these lines at the end (you should change the PATHs accordingly).
 

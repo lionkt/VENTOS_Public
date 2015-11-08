@@ -1,8 +1,8 @@
 /****************************************************************************/
-/// @file    ApplV_04_AID.h
+/// @file    ApplRSU_01a_crypto.h
 /// @author  Mani Amoozadeh <maniam@ucdavis.edu>
 /// @author  second author name
-/// @date    August 2013
+/// @date    Nov 2015
 ///
 /****************************************************************************/
 // VENTOS, Vehicular Network Open Simulator; see http:?
@@ -25,41 +25,29 @@
 // Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 //
 
-#ifndef ApplVAID_H
-#define ApplVAID_H
+#ifndef APPLRSUCRYPTO_H_
+#define APPLRSUCRYPTO_H_
 
-#include "ApplV_03a_crypto.h"
+#include "ApplRSU_01_Base.h"
 
 namespace VENTOS {
 
-class ApplV_AID : public ApplV_Crypto
+class ApplRSUCRYPTO : public ApplRSUBase
 {
-public:
-    ~ApplV_AID();
-    virtual void initialize(int stage);
-    virtual void finish();
+	public:
+		~ApplRSUCRYPTO();
+		virtual void initialize(int stage);
+		virtual void finish();
+        virtual void handleSelfMsg(cMessage* msg);
 
-protected:
-    virtual void handleSelfMsg(cMessage*);
-    virtual void handlePositionUpdate(cObject*);
+	protected:
+	    void virtual executeEachTimeStep(bool);
 
-    virtual void onBeaconVehicle(BeaconVehicle*);
-    virtual void onBeaconRSU(BeaconRSU*);
-    virtual void onData(PlatoonMsg* wsm);
-
-    LaneChangeMsg* prepareData(std::string, std::deque<std::string>);
-
-protected:
-    // NED
-    bool AID;
-
-    // class variables
-    std::string fromLane;
-    std::string toLane;
-    double fromX;
-    double toX;
-
-    std::deque<std::string> laneChanges;
+        virtual void onBeaconVehicle(BeaconVehicle*);
+        virtual void onBeaconBicycle(BeaconBicycle*);
+        virtual void onBeaconPedestrian(BeaconPedestrian*);
+        virtual void onBeaconRSU(BeaconRSU*);
+        virtual void onData(LaneChangeMsg*);
 };
 
 }

@@ -1,8 +1,8 @@
 /****************************************************************************/
-/// @file    ApplV_04_AID.h
+/// @file    ApplV_03a_crypto.cc
 /// @author  Mani Amoozadeh <maniam@ucdavis.edu>
 /// @author  second author name
-/// @date    August 2013
+/// @date    Nov 2015
 ///
 /****************************************************************************/
 // VENTOS, Vehicular Network Open Simulator; see http:?
@@ -25,43 +25,64 @@
 // Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 //
 
-#ifndef ApplVAID_H
-#define ApplVAID_H
-
 #include "ApplV_03a_crypto.h"
 
 namespace VENTOS {
 
-class ApplV_AID : public ApplV_Crypto
+Define_Module(VENTOS::ApplV_Crypto);
+
+ApplV_Crypto::~ApplV_Crypto()
 {
-public:
-    ~ApplV_AID();
-    virtual void initialize(int stage);
-    virtual void finish();
-
-protected:
-    virtual void handleSelfMsg(cMessage*);
-    virtual void handlePositionUpdate(cObject*);
-
-    virtual void onBeaconVehicle(BeaconVehicle*);
-    virtual void onBeaconRSU(BeaconRSU*);
-    virtual void onData(PlatoonMsg* wsm);
-
-    LaneChangeMsg* prepareData(std::string, std::deque<std::string>);
-
-protected:
-    // NED
-    bool AID;
-
-    // class variables
-    std::string fromLane;
-    std::string toLane;
-    double fromX;
-    double toX;
-
-    std::deque<std::string> laneChanges;
-};
 
 }
 
-#endif
+// initialization code when starting
+void ApplV_Crypto::initialize(int stage)
+{
+    ApplVSystem::initialize(stage);
+
+	if (stage == 0)
+	{
+
+	}
+}
+
+// finishing code before simulation ending
+void ApplV_Crypto::finish()
+{
+    ApplVSystem::finish();
+}
+
+// handle my own SelfMsg (timers, etc)
+void ApplV_Crypto::handleSelfMsg(cMessage* msg)
+{
+    ApplVSystem::handleSelfMsg(msg);
+}
+
+// received a new beacon from vehicle
+void ApplV_Crypto::onBeaconVehicle(BeaconVehicle* wsm)
+{
+    // no need to pass this down
+}
+
+// received a new beacon from RSU
+void ApplV_Crypto::onBeaconRSU(BeaconRSU* wsm)
+{
+    // no need to pass this down
+}
+
+// received a new data from platoon
+void ApplV_Crypto::onData(PlatoonMsg* wsm)
+{
+    // no need to pass this down
+
+}
+
+// is called, every time the position of vehicle changes
+void ApplV_Crypto::handlePositionUpdate(cObject* obj)
+{
+    ApplVSystem::handlePositionUpdate(obj);
+}
+
+}
+

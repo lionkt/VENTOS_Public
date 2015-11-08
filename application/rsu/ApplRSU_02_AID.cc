@@ -43,7 +43,7 @@ ApplRSUAID::~ApplRSUAID()
 
 void ApplRSUAID::initialize(int stage)
 {
-    ApplRSUBase::initialize(stage);
+    ApplRSUCRYPTO::initialize(stage);
 
     if (stage==0)
     {
@@ -58,19 +58,19 @@ void ApplRSUAID::initialize(int stage)
 
 void ApplRSUAID::finish()
 {
-    ApplRSUBase::finish();
+    ApplRSUCRYPTO::finish();
 }
 
 
 void ApplRSUAID::handleSelfMsg(cMessage* msg)
 {
-    ApplRSUBase::handleSelfMsg(msg);
+    ApplRSUCRYPTO::handleSelfMsg(msg);
 }
 
 
 void ApplRSUAID::executeEachTimeStep(bool simulationDone)
 {
-    ApplRSUBase::executeEachTimeStep(simulationDone);
+    ApplRSUCRYPTO::executeEachTimeStep(simulationDone);
 
     // only RSU[0] executes this
     if( printIncidentDetection && std::string("RSU[0]") == myFullId )

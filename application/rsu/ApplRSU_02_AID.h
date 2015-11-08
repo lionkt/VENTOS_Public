@@ -28,11 +28,11 @@
 #ifndef APPLRSUAID_H_
 #define APPLRSUAID_H_
 
-#include "ApplRSU_01_Base.h"
+#include "ApplRSU_01a_crypto.h"
 
 namespace VENTOS {
 
-class ApplRSUAID : public ApplRSUBase
+class ApplRSUAID : public ApplRSUCRYPTO
 {
 	public:
 		~ApplRSUAID();

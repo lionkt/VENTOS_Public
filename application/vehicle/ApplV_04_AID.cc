@@ -39,7 +39,7 @@ ApplV_AID::~ApplV_AID()
 
 void ApplV_AID::initialize(int stage)
 {
-    ApplVSystem::initialize(stage);
+    ApplV_Crypto::initialize(stage);
 
 	if (stage == 0)
 	{
@@ -57,14 +57,14 @@ void ApplV_AID::initialize(int stage)
 
 void ApplV_AID::finish()
 {
-    ApplVSystem::finish();
+    ApplV_Crypto::finish();
 }
 
 
 // handle my own SelfMsg
 void ApplV_AID::handleSelfMsg(cMessage* msg)
 {
-    ApplVSystem::handleSelfMsg(msg);
+    ApplV_Crypto::handleSelfMsg(msg);
 }
 
 
@@ -139,7 +139,7 @@ LaneChangeMsg*  ApplV_AID::prepareData(std::string receiver, std::deque<std::str
 // is called, every time the position of vehicle changes
 void ApplV_AID::handlePositionUpdate(cObject* obj)
 {
-    ApplVSystem::handlePositionUpdate(obj);
+    ApplV_Crypto::handlePositionUpdate(obj);
 
     // if incident detection is not on, return
     if(!AID)

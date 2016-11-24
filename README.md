@@ -131,7 +131,7 @@ Ubuntu 14.04:
 
 **Step 3:** Clone the VENTOS repository in the current directory (run the command in the same folder as Eclipse workspace that you specified before). You also need to provide your github username and password.
 
-    git clone https://github.com/ManiAm/VENTOS
+    git clone https://github.com/ManiAm/VENTOS_Public
 
 **Step 4:** Now you can import VENTOS project into the OMNET++ IDE. Choose "File->Import" from the menu. Choose "General->Existing Projects into Workspace" from the upcoming dialog and proceed with "Next". Choose "Select root directory" and select the VENTOS folder. "VENTOS" should appear in the "Projects" section. Unselect "Copy project into workspace" if the VENTOS folder is already in your workspace. Click "Finish".
 
